@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>FinOps Audit</title>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-left">
+            <!-- <img src="assets/MicrosoftTeams-image.png" alt="Logo" width="50" height="350"> -->
+           <img src="/home/knoldus/Documents/waf-audit/assets/MicrosoftTeams-image.png" alt="nash tech logo" height="auto" width="100px">
+          </div>
+        <div class="navbar-center">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Audit</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Resources</a></li>
+            </ul>
+        </div>
+        <div class="navbar-right">
+            <button class="lets-talk-btn">Get Started</button>
+        </div>
+    </nav>
+
+    <div class="image-block">
+        <img src="assets/img1.png" alt="FinOps-audit">
+        <div class="image-text">
+            <p>WAF Audit</p>
+        </div>
+    </div>
+
+    <div class="content-block">
+        <div class="text-block">
+            <p>
+              Unlock the Power of Seamless FinOps Excellence with Our FinOps Audit
+              Dive into a world where every aspect of your cloud financial operations is meticulously examined and 
+              optimized for cost efficiency and performance. Elevate your cloud cost management with precision,transparency, and innovation.
+              Let our audit be the catalyst for your financial success in the cloud!            </p>
+          
+        </div>
+        <div class="image-block-audit">
+            <img src="assets/img2.jpeg" alt="DevOps Audit Image">
+        </div>
+    </div>
+
+
+    <!-- <div class="maturity-model">
+        <h1>DevOps Maturity Model- Audit and Assessment</h1>
+        <img src="assets/model.png" alt="">
+    </div> -->
+
+
+
+    <div class="container">
+
+      <div class="pillar-container">
+        <div class="pillar" onclick="jumpToPillar(1)">
+          Foundational <span class="question-indicator" id="questionIndicator1"
+            >0</span
+          >
+        </div>
+  
+        <div class="pillar" onclick="jumpToPillar(2)">
+          Cultural<span class="question-indicator" id="questionIndicator2"
+            >0</span
+          >
+        </div>
+  
+        <div class="pillar" onclick="jumpToPillar(3)">
+          Operational Excellence<span class="question-indicator" id="questionIndicator3"
+            >0</span
+          >
+        </div>
+  
+        <div class="pillar" onclick="jumpToPillar(4)">
+          Financial Management <span class="question-indicator" id="questionIndicator4"
+            >0</span
+          >
+        </div>
+  
+        <div class="pillar" onclick="jumpToPillar(5)">
+          Cost Optimization<span class="question-indicator" id="questionIndicator5"
+            >0</span
+          >
+        </div>
+  
+        <!-- <div class="pillar" onclick="jumpToPillar(6)">
+          Performance Efficiency<span class="question-indicator" id="questionIndicator6"  // changes
+            >0</span
+          >
+        </div> -->
+        <!-- Repeat for other pillars -->
+      </div>
+  
+      <!-- Pillar container for side navigation -->
+      <!-- <div class="pillar-container">
+   <div class="pillar" onclick="jumpToPillar(1)">Pillar 1</div>
+   <div class="pillar" onclick="jumpToPillar(2)">Pillar 2</div>
+   <div class="pillar" onclick="jumpToPillar(3)">Pillar 3</div>
+   <div class="pillar" onclick="jumpToPillar(4)">Pillar 4</div>
+   <div class="pillar" onclick="jumpToPillar(5)">Pillar 5</div>
+   <div class="pillar" onclick="jumpToPillar(6)">Pillar 6</div>
+   </div> -->
+  
+      <!-- Quiz container -->
+      <div id="quizContainer">
+        <!-- Pillar 1 -->
+        <div class="pillar" id="pillar1">
+          <h2>Pillar 1 : Foundational</h2>
+          <div class="question" id="pillar1_q1">
+            <h3>How aware is your organization of FinOps principles?</h3>
+            <button onclick="showOptions('pillar1_q1')">Choose One</button>
+            <select
+              name="pillar1_q1"
+              id="pillar1_q1_select"
+              style="display: none"
+              onchange="enableNextButton('pillar1_indicator', 'pillar1_q1','1',value)"
+            >
+              <option value="choose">Choose an option</option>
+              <option value="0">There is no awareness of FinOps</option>
+              <option value="1">Some team members are aware of FinOps basics</option>
+              <option value="2">The organization has a foundational understanding of FinOps</option>
+              <option value="3">FinOps principles are actively discussed at various levels</option>
+              <option value="4">FinOps awareness is embedded in the organizational culture</option>
+            </select>
+          </div>
+  
+          <div class="question" id="pillar1_q2">
+            <h3>How engaged is leadership in promoting FinOps?</h3>
+            <button onclick="showOptions('pillar1_q2')">Choose One</button>
+            <select
+              name="pillar1_q2"
+              id="pillar1_q2_select"
+              style="display: none"
+              onchange="enableNextButton('pillar1_indicator', 'pillar1_q2','1',value)"
+            >
+              <option value="choose">Choose an option</option>
+              <option value="0">There is no executive support for FinOps</option>
+              <option value="1">Some leaders are aware but do not actively promote it</option>
+              <option value="2">Leadership encourages discussions about FinOps</option>
+              <option value="3">Leaders regularly participate in FinOps initiatives</option>
+              <option value="4">Leadership actively champions FinOps with dedicated resources</option>
+            </select>
+          </div>
+          <div class="question" id="pillar1_q3">
+            <h3>Does the organization acknowledge the necessity of having FinOps?</h3>
+            <button onclick="showOptions('pillar1_q3')">Choose One</button>
+            <select
+              name="pillar1_q3"
+              id="pillar1_q3_select"
+              style="display: none"
+              onchange="enableNextButton('pillar1_indicator', 'pillar1_q3','1',value)"
+            >
+              <option value="choose">Choose an option</option>
+              <option value="0">No recognition of FinOps necessity</option>
+              <option value="1">Initial Awareness</option>
+              <option value="2">Acknowledgment with early implementation steps</option>
+              <option value="3">Established processes for financial operations</option>
+              <option value="4">FinOps drives strategic financial decisions</option>
+            </select>
+          </div>
+          <div class="question" id="pillar1_q4">
+            <h3>How effective are training programs on FinOps?</h3>
+            <button onclick="showOptions('pillar1_q4')">Choose One</button>
+            <select
+              name="pillar1_q4"
+              id="pillar1_q4_select"
+              style="display: none"
+              onchange="enableNextButton('pillar1_indicator', 'pillar1_q4','1',value)"
+            >
+              <option value="choose">Choose an option</option>
+              <option value="0">No training programs exist for FinOps</option>
+              <option value="1">Basic training sessions are offered occasionally</option>
+              <option value="2">Training programs exist but lack depth</option>
+              <option value="3">Regular, structured training sessions are conducted</option>
+              <option value="4">Training is comprehensive and includes hands-on workshops</option>
+            </select>
+          </div>
+          <div class="question" id="pillar1_q5">
+            <h3>How effectively is technology leveraged in FinOps?</h3>
+            <button onclick="showOptions('pillar1_q5')">Choose One</button>
+            <select
+              name="pillar1_q5"
+              id="pillar1_q5_select"
+              style="display: none"
+              onchange="enableNextButton('pillar1_indicator', 'pillar1_q5','1',value)"
+            >
+              <option value="choose">Choose an option</option>
+              <option value="0">No technology is used for FinOps processes</option>
+              <option value="1">Some tools are used but lack integration</option>
+              <option value="2">Basic technology solutions support FinOps</option>
+              <option value="3">Advanced tools are integrated into FinOps workflows</option>
+              <option value="4">Technology is fully automated and continuously improved</option>
+            </select>
+          </div>
+  
+          <!-- Add more questions for Pillar 1 -->
+          <!-- Repeat this structure for Questions 2 to 5 in Pillar 1 -->
+          <!-- Add pillar indicator -->
+          <div class="pillar-indicator">
+            <span id="pillar1_indicator" style="font-size: 25px;font-weight: 700;">0</span><span style="font-size: 25px;font-weight: 700;">/5</span>
+          </div>
+        </div>
+  
+  
+  
+        <!-- Pillar 2 -->
+        <div class="pillar" id="pillar2" style="display: none">
+          <h2>Pillar 2: Cultural        </h2>
+          <div class="question" id="pillar2_q1">
+            <h3>How well is the concept of shared financial responsibility understood?</h3>
+            <button onclick="showOptions('pillar2_q1')">Choose One</button>
+            <select
+              name="pillar2_q1"
+              id="pillar2_q1_select"
+              style="display: none"
+              onchange="enableNextButton('pillar2_indicator', 'pillar2_q1','2',value)" >
+              <option value="choose">Choose an option</option>                                                  #changes
+              <option value="0">There is no understanding of shared responsibility</option>
+              <option value="1">Some team members recognize shared responsibility</option>
+              <option value="2">The concept is acknowledged but not fully embraced</option>
+              <option value="3">Most teams understand and practice shared responsibility</option>
+              <option value="4">There is a strong culture of shared financial accountability</option>
+            </select>
+          </div>
+  
+          <div class="question" id="pillar2_q2">
+            <h3>Is a standardized set of terms for discussing FinOps employed throughout the organization?</h3>
+            <button onclick="showOptions('pillar2_q2')">Choose One</button>
+            <select
+              name="pillar2_q2"
+              id="pillar2_q2_select"
+              style="display: none"
+              onchange="enableNextButton('pillar2_indicator', 'pillar2_q2','2',value)"
+            >
+              <option value="choose">Choose an option</option>                                                        #changes
+              <option value="0">No standardized terms used across teams</option>
+              <option value="1">Some terms are used, but inconsistently</option>
+              <option value="2">Standardized terms exist but are not widely adopted</option>
+              <option value="3">Most teams use standardized terms consistently</option>
+              <option value="4"> All teams universally use standardized terms effectively</option>
+            </select>
+          </div>
+          <div class="question" id="pillar2_q3">
+            <h3>How well do teams provide feedback on financial practices?</h3>
+            <button onclick="showOptions('pillar2_q3')">Choose One</button>
+            <select
+              name="pillar2_q3"
+              id="pillar2_q3_select"
+              style="display: none"
+              onchange="enableNextButton('pillar2_indicator', 'pillar2_q3','2',value)"
+            >
+              <option value="choose">Choose an option</option>                                                     #changes
+              <option value="0">No feedback mechanisms are in place</option>
+              <option value="1">Some informal feedback occurs</option>
+              <option value="2">Structured feedback sessions are held occasionally</option>
+              <option value="3">Regular feedback sessions provide actionable insights</option>
+              <option value="4">Continuous feedback is embedded in the financial process</option>
+            </select>
+          </div>
+          <div class="question" id="pillar2_q4">
+            <h3>How aligned is the team culture with FinOps principles?</h3>
+            <button onclick="showOptions('pillar2_q4')">Choose One</button>
+            <select
+              name="pillar2_q4"
+              id="pillar2_q4_select"
+              style="display: none"style="display: none"
+              onchange="enableNextButton('pillar2_indicator', 'pillar2_q4','2',value)"
+            >
+              <option value="choose">Choose an option</option>                                                      #changes
+              <option value="0">There is no alignment with FinOps principles</option>
+              <option value="1">Some elements of FinOps are acknowledged</option>
+              <option value="2">Basic alignment exists, but gaps are noticeable</option>
+              <option value="3">Most teams align with FinOps practices</option>
+              <option value="4">FinOps principles are integral to the organizational culture</option>
+            </select>
+          </div>
+          <div class="question" id="pillar2_q5">
+            <h3>Do employees responsible for provisioning cloud services understand the pricing framework of these resources?</h3>
+            <button onclick="showOptions('pillar2_q5')">Choose One</button>
+            <select
+              name="pillar2_q5"
+              id="pillar2_q5_select"
+              style="display: none"
+              onchange="enableNextButton('pillar2_indicator', 'pillar2_q5','2',value)"
+            >
+              <option value="choose">Choose an option</option>
+              <option value="0">No understanding of pricing framework</option>
+              <option value="1">Some employees have limited awareness</option>
+              <option value="2">Basic understanding among provisioning engineers</option>
+              <option value="3">Most engineers are well-versed in pricing</option>
+              <option value="4">All employees confidently understand and apply pricing</option>
+            </select>
+          </div>
+  
+          <!-- Add more questions for Pillar 1 -->
+          <!-- Repeat this structure for Questions 2 to 5 in Pillar 1 -->
+          <!-- Add pillSustainabilityar indicator -->
+          <div class="pillar-indicator">
+            <span id="pillar2_indicator" style="font-size: 25px;font-weight: 700;">0</span><span style="font-size: 25px;font-weight: 700;">/5</span>
+          </div>
+        </div>
+  
+  
+  
+        <!--Pillar 3 -->
+        <div class="pillar" id="pillar3" style="display: none">
+          <h2>Pillar 3: Operational Excellence        </h2>
+          <div class="question" id="pillar3_q1">
+            <h3>How efficient are your FinOps Process?</h3>
+            <button onclick="showOptions('pillar3_q1')">Choose One</button>
+            <select
+              name="pillar3_q1"
+              id="pillar3_q1_select"
+              style="display: none"
+              onchange="enableNextButton('pillar3_indicator', 'pillar3_q1','3',value)"
+            >
+              <option value="choose">Choose an option</option>
+              <option value="0">Processes are largely manual and inefficient</option>
+              <option value="1">Some efficiency improvements have been made</option>
+              <option value="2">Basic processes are standardized but not optimized</option>
+              <option value="3">Processes are regularly reviewed for efficiency</option>
+              <option value="4">Continuous improvement practices are embedded in processes</option>
+            </select>
+          </div>
+  
+          <div class="question" id="pillar3_q2">
+            <h3>How clearly defined are FinOps roles ?</h3>
+            <button onclick="showOptions('pillar3_q2')">Choose One</button>
+            <select
+              name="pillar3_q2"
+              id="pillar3_q2_select"
+              style="display: none"
+              onchange="enableNextButton('pillar3_indicator', 'pillar3_q2','3',value)"
+            >
+              <option value="choose">Choose an option</option>
+              <option value="0">Roles are vague and poorly defined</option>
+              <option value="1">Basic roles exist but lack clarity</option>
+              <option value="2">Roles are defined but not consistently followed</option>
+              <option value="3">Clearly defined roles are documented and communicated</option>
+              <option value="4">Roles are continuously assessed for alignment with goals</option>
+            </select>
+          </div>
+          <div class="question" id="pillar3_q3">
+            <h3>How are FinOps performance metrics tracked?</h3>
+            <button onclick="showOptions('pillar3_q3')">Choose One</button>
+            <select
+              name="pillar3_q3"
+              id="pillar3_q3_select"
+              style="display: none"
+              onchange="enableNextButton('pillar3_indicator', 'pillar3_q3','3',value)"
+            >
+              <option value="choose">Choose an option</option>
+              <option value="0">No metrics are tracked</option>
+              <option value="1">Basic metrics are tracked but lack depth</option>
+              <option value="2">Key metrics are monitored with periodic reviews</option>
+              <option value="3">Comprehensive metrics are tracked and analysed regularly</option>
+              <option value="4">Continuous monitoring drives operational decision-making</option>
+            </select>
+          </div>
+          <div class="question" id="pillar3_q4">
+            <h3>Is cost management under FinOps integrated into the designated staff's job responsibilities and performance assessments ?</h3>
+            <button onclick="showOptions('pillar3_q4')">Choose One</button>
+            <select
+              name="pillar3_q4"
+              id="pillar3_q4_select"
+              style="display: none"style="display: none"
+              onchange="enableNextButton('pillar3_indicator', 'pillar3_q4','3',value)"
+            >
+              <option value="choose">Choose an option</option>
+              <option value="0">Cost management is not part of any role</option>
+              <option value="1">Some awareness, but not formally included in responsibilities</option>
+              <option value="2">Managing cloud costs is recognized but inconsistently enforced</option>
+              <option value="3">Responsibilities include cloud cost management, reflected in assessments</option>
+              <option value="4">Cost management is fully integrated into roles and evaluations for all involved staff</option>
+            </select>
+          </div>
+          <div class="question" id="pillar3_q5">
+            <h3>Does the organization have formal documentation and KPIs for cloud cost management?</h3>
+            <button onclick="showOptions('pillar3_q5')">Choose One</button>
+            <select
+              name="pillar3_q5"
+              id="pillar3_q5_select"
+              style="display: none"
+              onchange="enableNextButton('pillar3_indicator', 'pillar3_q5','3',value)"
+            >
+              <option value="choose">Choose an option</option>
+              <option value="0">No formal documentation or KPIs established</option>
+              <option value="1">Some documentation exists, but KPIs are not defined</option>
+              <option value="2">Documentation in place, with basic KPIs identified</option>
+              <option value="3">Comprehensive documentation and established KPIs for performance</option>
+              <option value="4">Robust documentation, clear KPIs, and regular evaluations to drive performance</option>
+            </select>
+          </div>
+  
+          <!-- Add more questions for Pillar 1 -->
+          <!-- Repeat this structure for Questions 2 to 5 in Pillar 1 -->
+          <!-- Add pillar indicator -->
+          <div class="pillar-indicator">
+            <span id="pillar3_indicator" style="font-size: 25px;font-weight: 700;">0</span><span style="font-size: 25px;font-weight: 700;">/5</span>
+          </div>
+        </div>
+  
+  
+        <!-- pillar 4 -->
+        <div class="pillar" id="pillar4" style="display: none">
+          <h2>Pillar 4 : Financial Management         </h2>
+          <div class="question" id="pillar4_q1">
+            <h3>How effective is your budgeting process?</h3>
+            <button onclick="showOptions('pillar4_q1')">Choose One</button>
+            <select
+              name="pillar4_q1"
+              id="pillar4_q1_select"
+              style="display: none"
+              onchange="enableNextButton('pillar4_indicator', 'pillar4_q1','4',value)"
+            >
+              <option value="choose">Choose an option</option>
+              <option value="0">The budgeting process is manual and unstructured</option>
+              <option value="1">Some structure exists, but it's inconsistently followed</option>
+              <option value="2">Budgeting involves basic inputs but lacks detail</option>
+              <option value="3">A structured budgeting process with regular reviews is in place</option>
+              <option value="4">Budgeting is automated and continuously refined</option>
+            </select>
+          </div>
+  
+          <div class="question" id="pillar4_q2">
+            <h3>How accurate are your financial forecasts?</h3>
+            <button onclick="showOptions('pillar4_q2')">Choose One</button>
+            <select
+              name="pillar4_q2"
+              id="pillar4_q2_select"
+              style="display: none"
+              onchange="enableNextButton('pillar4_indicator', 'pillar4_q2','4',value)"
+            >
+              <option value="choose">Choose an option</option>
+              <option value="0">Forecasts are rarely accurate</option>
+              <option value="1">Basic forecasts are made but lack historical context</option>
+              <option value="2">Some forecasting is accurate based on past data</option>
+              <option value="3">Regular reviews improve forecast accuracy significantly</option>
+              <option value="4">Forecasting processes are automated with real-time adjustments</option>
+            </select>
+          </div>
+          <div class="question" id="pillar4_q3">
+            <h3>How effectively are costs allocated within the organization?</h3>
+            <button onclick="showOptions('pillar4_q3')">Choose One</button>
+            <select
+              name="pillar4_q3"
+              id="pillar4_q3_select"
+              style="display: none"
+              onchange="enableNextButton('pillar4_indicator', 'pillar4_q3','4',value)"
+            >
+              <option value="choose">Choose an option</option>
+              <option value="0">No cost allocation practices exist</option>
+              <option value="1">Basic allocation occurs but lacks transparency</option>
+              <option value="2">Allocation practices are documented but not regularly reviewed</option>
+              <option value="3">Clear and consistent allocation practices are followed</option>
+              <option value="4">Cost allocation is fully automated and transparent</option>
+            </select>
+          </div>
+          <div class="question" id="pillar4_q4">
+            <h3>How effective are your financial reports?</h3>
+            <button onclick="showOptions('pillar4_q4')">Choose One</button>
+            <select
+              name="pillar4_q4"
+              id="pillar4_q4_select"
+              style="display: none"style="display: none"
+              onchange="enableNextButton('pillar4_indicator', 'pillar4_q4','4',value)"
+            >
+              <option value="choose">Choose an option</option>
+              <option value="1">Reports are rarely generated or used</option>
+              <option value="2">Basic reports are created but lack insights</option>
+              <option value="3">Reports are generated regularly with some useful data</option>
+              <option value="4">Comprehensive reports provide valuable insights for decision-making</option>
+              <option value="5">Real-time, interactive dashboards are used for reporting</option>
+            </select>
+          </div>
+          <div class="question" id="pillar4_q5">
+            <h3>How are investment strategies managed?</h3>
+            <button onclick="showOptions('pillar4_q5')">Choose One</button>
+            <select
+              name="pillar4_q5"
+              id="pillar4_q5_select"
+              style="display: none"
+              onchange="enableNextButton('pillar4_indicator', 'pillar4_q5','4',value)"
+            >
+              <option value="choose">Choose an option</option>
+              <option value="0">No clear investment strategies are defined</option>
+              <option value="1">Basic strategies exist but lack alignment with goals</option>
+              <option value="2">Some investment strategies are communicated</option>
+              <option value="3">Regular reviews ensure alignment with financial objectives</option>
+              <option value="4">Investment strategies are actively managed with clear metrics</option>
+            </select>
+          </div>
+  
+          <!-- Add more questions for Pillar 1 -->
+          <!-- Repeat this structure for Questions 2 to 5 in Pillar 1 -->
+          <!-- Add pillar indicator -->
+          <div class="pillar-indicator">
+            <span id="pillar4_indicator" style="font-size: 25px;font-weight: 700;">0</span><span style="font-size: 25px;font-weight: 700;">/5</span>
+          </div>
+        </div>
+  
+        <!-- pillar 5 -->
+        <div class="pillar" id="pillar5" style="display: none">
+          <h2>Pillar 5 : Cost Optimization        </h2>
+          <div class="question" id="pillar5_q1">
+            <h3>How aware are teams of their costs?</h3>
+            <button onclick="showOptions('pillar5_q1')">Choose One</button>
+            <select
+              name="pillar5_q1"
+              id="pillar5_q1_select"
+              style="display: none"
+              onchange="enableNextButton('pillar5_indicator', 'pillar5_q1','5',value)"
+            >
+              <option value="choose">Choose an option</option>
+              <option value="0">There is no awareness of costs at the team level</option>
+              <option value="1">Some teams are aware of their basic costs</option>
+              <option value="2">Cost awareness is promoted but not consistently practiced</option>
+              <option value="3">Most teams actively monitor and manage costs</option>
+              <option value="4">A strong culture of cost consciousness exists organization-wide</option>
+            </select>
+          </div>
+  
+          <div class="question" id="pillar5_q2">
+            <h3>What tools are used for cost management?</h3>
+            <button onclick="showOptions('pillar5_q2')">Choose One</button>
+            <select
+              name="pillar5_q2"
+              id="pillar5_q2_select"
+              style="display: none"
+              onchange="enableNextButton('pillar5_indicator', 'pillar5_q2','5',value)"
+            >
+              <option value="choose">Choose an option</option>
+              <option value="0">No tools are used for managing costs</option>
+              <option value="1">Basic spreadsheets are used for tracking</option>
+              <option value="2">Some tools are utilized but lack integration</option>
+              <option value="3">Advanced tools are used for cost tracking and analysis</option>
+              <option value="4">Cost management tools are fully integrated and automated</option>
+            </select>
+          </div>
+          <div class="question" id="pillar5_q3">
+            <h3>How proactive is your organization in optimizing costs?</h3>
+            <button onclick="showOptions('pillar5_q3')">Choose One</button>
+            <select
+              name="pillar5_q3"
+              id="pillar5_q3_select"
+              style="display: none"
+              onchange="enableNextButton('pillar5_indicator', 'pillar5_q3','5',value)"
+            >
+              <option value="choose">Choose an option</option>
+              <option value="0">There are no strategies in place for cost optimization</option>
+              <option value="1">Basic strategies are identified but not acted upon</option>
+              <option value="2">Some strategies are implemented but lack monitoring</option>
+              <option value="3">Regular reviews drive ongoing cost optimization efforts</option>
+              <option value="4">Cost optimization is embedded in the decision-making process</option>
+            </select>
+          </div>
+          <div class="question" id="pillar5_q4">
+            <h3>How effectively is resource wastage identified and addressed?</h3>
+            <button onclick="showOptions('pillar5_q4')">Choose One</button>
+            <select
+              name="pillar5_q4"
+              id="pillar5_q4_select"
+              style="display: none"style="display: none"
+              onchange="enableNextButton('pillar5_indicator', 'pillar5_q4','5',value)"
+            >
+              <option value="choose">Choose an option</option>
+              <option value="0">No mechanisms are in place to identify wastage</option>
+              <option value="1">Basic identification occurs but is not acted upon</option>
+              <option value="2">Some wastage is identified and addressed</option>
+              <option value="3">Regular reviews lead to proactive wastage management</option>
+              <option value="4">Automated systems continuously identify and flag wastage</option>
+            </select>
+          </div>
+          <div class="question" id="pillar5_q5">
+            <h3>How effectively are vendor costs managed?</h3>
+            <button onclick="showOptions('pillar5_q5')">Choose One</button>
+            <select
+              name="pillar5_q5"
+              id="pillar5_q5_select"
+              style="display: none"
+              onchange="enableNextButton('pillar5_indicator', 'pillar5_q5','5',value)"
+            >
+              <option value="choose">Choose an option</option>
+              <option value="0">No vendor management practices exist.</option>
+              <option value="1">Basic management occurs but lacks oversight</option>
+              <option value="2">Vendor costs are monitored but not optimized</option>
+              <option value="3">Regular reviews ensure vendor costs align with budget</option>
+              <option value="4">Vendor management is fully optimized with regular negotiations</option>
+            </select>
+          </div>
+  
+          <!-- Add more questions for Pillar 1 -->
+          <!-- Repeat this structure for Questions 2 to 5 in Pillar 1 -->
+          <!-- Add pillar indicator -->
+          <div class="pillar-indicator">
+            <span id="pillar5_indicator" style="font-size: 25px;font-weight: 700;">0</span><span style="font-size: 25px;font-weight: 700;">/5</span>
+          </div>
+        </div>
+  
+        
+        <button onclick="showNextPillar()" id="nextButton" disabled>
+          Next Pillar
+        </button>
+        <button
+          onclick="calculatePoints()"
+          id="calculateButton"
+          style="display: none"
+        >
+          Calculate Points
+        </button>
+      </div>
+
+    </div>
+
+
+
+    <footer class="simple-footer">
+      <div class="container">
+          <!-- Logo Section -->
+          <div class="logo-section">
+              <img src="assets/MicrosoftTeams-image.png" alt="NashTech Logo" class="logo">
+          </div>
+  
+          <!-- Navigation Section -->
+          <div class="navigation">
+              <!-- NashTech -->
+              <div class="nav-section">
+                  <p>NashTech</p>
+                  <ul>
+                    <li><a href="https://finops.ntglaunch.com/#">Contact us</a></li>
+                    <li><a href="https://finops.ntglaunch.com/#">Careers</a></li>
+                    <li><a href="https://finops.ntglaunch.com/#">Our locations</a></li>
+                </ul>
+              </div>
+  
+              <!-- Home -->
+              <div class="nav-section">
+                  <p>Home</p>
+                  <ul>
+                    <li><a href="https://finops.ntglaunch.com/#">Our Solutions</a></li>
+                    <li><a href="https://finops.ntglaunch.com/#">Partners</a></li>
+                    <li><a href="https://finops.ntglaunch.com/#">Our Thinking</a></li>
+                  </ul>
+              </div>
+  
+              <!-- Useful Links -->
+              <div class="nav-section">
+                  <p>Useful Links</p>
+                  <ul>
+                    <li><a href="https://finops.ntglaunch.com/#">Privacy Notices</a></li>
+                    <li><a href="https://finops.ntglaunch.com/#">Modern Slavery</a></li>
+                    <li><a href="https://finops.ntglaunch.com/#">Nash Accelerators</a></li>
+                  </ul>
+              </div>
+  
+              <!-- Support -->
+              <div class="nav-section">
+                  <p>Support</p>
+                  <ul>
+                    <li><a href="https://finops.ntglaunch.com/#">Knowledge Base</a></li>
+                    <li><a href="https://finops.ntglaunch.com/#">Contact Support</a></li>
+                    <li><a href="https://finops.ntglaunch.com/#">Privacy Policy</a></li>
+                    <li><a href="https://finops.ntglaunch.com/#">TOS</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+          <!-- Social Links -->
+          <div class="social-links">
+            <a href="https:/#" class="social-link" target="_blank">
+              <img src="assets/social-icons/facebook.png" alt="Facebook">
+          </a>
+          <a href="https:/#" class="social-link" target="_blank">
+              <img src="assets/social-icons/twitter.png" alt="Twitter">
+          </a>
+          <a href="https:/#" class="social-link" target="_blank">
+              <img src="assets/social-icons/youtube.png" alt="YouTube">
+          </a>
+          <a href="https:/#" class="social-link" target="_blank">
+              <img src="assets/social-icons/linkedin.png" alt="LinkedIn">
+          </a>
+          </div>
+  
+          <!-- Copyright Section -->
+          <div class="copyright-section">
+            <p>© 2023 · <a href="https://finops.ntglaunch.com/" target="_self" rel="home" aria-current="page">NashFinOpsNex</a> · All rights reserved</p>
+          </div>
+      <!-- </div> -->
+  </footer>
+  
+    
+<!-- 
+    <footer class="simple-footer">
+        <div class="logo-section">
+            <img src="assets/MicrosoftTeams-image.png" alt="NashTech Logo" class="logo">
+        </div>
+    
+       
+    
+        <div class="navigation">
+            <div class="nav-section">
+                <p>NashTech</p>
+                <ul>
+                    <li><a href="https://finops.ntglaunch.com/#">Contact us</a></li>
+                    <li><a href="https://finops.ntglaunch.com/#">Careers</a></li>
+                    <li><a href="https://finops.ntglaunch.com/#">Our locations</a></li>
+                </ul>
+            </div>
+    
+            <div class="nav-section">
+                <p>Home</p>
+                <ul>
+                    <li><a href="https://finops.ntglaunch.com/#">Our Solutions</a></li>
+                    <li><a href="https://finops.ntglaunch.com/#">Partners</a></li>
+                    <li><a href="https://finops.ntglaunch.com/#">Our Thinking</a></li>
+                </ul>
+            </div>
+    
+            <div class="nav-section">
+                <p>Useful Links</p>
+                <ul>
+                    <li><a href="https://finops.ntglaunch.com/#">Privacy Notices</a></li>
+                    <li><a href="https://finops.ntglaunch.com/#">Modern Slavery</a></li>
+                    <li><a href="https://finops.ntglaunch.com/#">Nash Accelerators</a></li>
+                </ul>
+            </div>
+    
+            <div class="nav-section">
+                <p>Support</p>
+                <ul>
+                    <li><a href="https://finops.ntglaunch.com/#">Knowledge Base</a></li>
+                    <li><a href="https://finops.ntglaunch.com/#">Contact Support</a></li>
+                    <li><a href="https://finops.ntglaunch.com/#">Privacy Policy</a></li>
+                    <li><a href="https://finops.ntglaunch.com/#">TOS</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="social-links">
+          <a href="https:/#" class="social-link" target="_blank">
+              <img src="facebook-icon.png" alt="Facebook">
+          </a>
+          <a href="https:/#" class="social-link" target="_blank">
+              <img src="twitter-icon.png" alt="Twitter">
+          </a>
+          <a href="https:/#" class="social-link" target="_blank">
+              <img src="youtube-icon.png" alt="YouTube">
+          </a>
+          <a href="https:/#" class="social-link" target="_blank">
+              <img src="linkedin-icon.png" alt="LinkedIn">
+          </a>
+      </div>
+    
+        <div class="copyright-section">
+            <p>© 2023 · <a href="https://finops.ntglaunch.com/" target="_self" rel="home" aria-current="page">NashFinOpsNex</a> · All rights reserved</p>
+        </div>
+    </footer> -->
+
+    <script>
+      let currentPillar = 1;
+      var previousSelectedValues = {};
+      let questionCounters = [0, 0, 0, 0, 0, 0]; // Initialize counters for each pillar
+      const calculateButton = document.getElementById("calculateButton");
+      const nextButton = document.getElementById("nextButton");
+
+      function showNextPillar() {
+        document.getElementById(`pillar${currentPillar}`).style.display =
+          "none";
+        if (currentPillar <= 5) {
+          currentPillar++;
+        }
+        const nextPillar = document.getElementById(`pillar${currentPillar}`);
+
+        if (nextPillar) {
+          nextPillar.style.display = "block";
+        }
+
+        // Toggle the visibility of buttons based on the current pillar
+        if (currentPillar === 6) {
+          nextButton.style.display = "none";
+          calculateButton.style.display = "inline-block";
+        } else {
+          nextButton.style.display = "inline-block";
+          calculateButton.style.display = "none";
+        }
+
+        // Disable next button until an option is selected
+        nextButton.disabled = true;
+      }
+
+      // Show Pillar 1 initially
+      document.getElementById("pillar1").style.display = "block";
+
+      function showOptions(questionId) {
+        const button = document.querySelector(`#${questionId} button`);
+        const select = document.querySelector(`#${questionId}_select`);
+
+        if (button && select) {
+          button.style.display = "none";
+          select.style.display = "inline-block";
+        }
+      }
+
+      function enableNextButton(indicatorId, questionId, index,value) {
+        nextButton.disabled = false;
+
+        
+        const questionIndicator = document.getElementById(indicatorId);
+
+        const currentCount = parseInt(questionIndicator.textContent);
+        const questionIndicator1 = document.getElementById(
+          `questionIndicator${index}`
+        );
+        if(value==="choose"){
+          previousSelectedValues="";
+          questionIndicator.textContent = (currentCount - 1).toString();
+            questionIndicator1.textContent = (currentCount - 1).toString();
+            
+            return false;
+          
+        }
+     if (previousSelectedValues !== questionId ) {
+          if (!isNaN(currentCount) && currentCount < 5) {
+            questionIndicator.textContent = (currentCount + 1).toString();
+            questionIndicator1.textContent = (currentCount + 1).toString();
+          }
+        }
+        previousSelectedValues = questionId;
+       
+        // // Increment the global counter for the specific pillar
+        //  questionCounters[pillarIndex - 1] += 1;
+      }
+
+      function jumpToPillar(pillarNumber) {
+        // Hide all pillars
+        for (let i = 1; i <= 6; i++) {
+          document.getElementById(`pillar${i}`).style.display = "none";
+        }
+
+        // Show the selected pillar
+        currentPillar = pillarNumber;
+        const selectedPillar = document.getElementById(
+          `pillar${currentPillar}`
+        );
+        if (selectedPillar) {
+          selectedPillar.style.display = "block";
+        }
+
+        // Toggle the visibility of buttons based on the current pillar
+        if (currentPillar === 6) {
+          nextButton.style.display = "none";
+          calculateButton.style.display = "inline-block";
+        } else {
+          nextButton.style.display = "inline-block";
+          calculateButton.style.display = "none";
+        }
+
+        // Disable next button until an option is selected
+        nextButton.disabled = true;
+      }
+
+//       function calculatePoints() {
+//         let totalPoints = 0;
+
+//         for (let pillarIndex = 1; pillarIndex <= 6; pillarIndex++) {
+//           for (let questionIndex = 1; questionIndex <= 5; questionIndex++) {
+//             const questionName = `pillar${pillarIndex}_q${questionIndex}`;
+//             const selectedOption = document.querySelector(
+//               `select[name="${questionName}"]`
+//             );
+
+//             if (selectedOption && selectedOption.value !== "choose") {
+//               totalPoints += parseInt(selectedOption.value);
+//             }
+//           }
+//         }
+
+//                // alert(`Total Points: ${totalPoints}`);
+//                if (totalPoints >= 0 && totalPoints <= 50) {
+//     alert(`Your Audit and Assessment score is : ${totalPoints} points. Poor score`);
+// } else if (totalPoints >= 50 && totalPoints <= 100) {
+//     alert(`Your Audit and Assessment score is : ${totalPoints} points. Good score`);
+// } else if (totalPoints > 100 && totalPoints <= 150) {
+//     alert(`Your Audit and Assessment score is : ${totalPoints} points. Excellent score`);
+// } else {
+//     alert(`Your Total Points: ${totalPoints}`);
+// }
+//       }
+//     </
+
+function calculatePoints() {
+  let totalPoints = 0;
+
+  // Your existing logic to calculate totalPoints
+  for (let pillarIndex = 1; pillarIndex <= 6; pillarIndex++) {
+    for (let questionIndex = 1; questionIndex <= 5; questionIndex++) {
+      const questionName = `pillar${pillarIndex}_q${questionIndex}`;
+      const selectedOption = document.querySelector(`select[name="${questionName}"]`);
+
+      if (selectedOption && selectedOption.value !== "choose") {
+        totalPoints += parseInt(selectedOption.value);
+      }
+    }
+  }
+
+  // Create a custom popup with the score message and buttons
+  let message;
+if (totalPoints >= 0 && totalPoints <= 50) {
+  message = `Your Audit and Assessment score is: ${totalPoints} points. Poor score`;
+} else if (totalPoints >= 50 && totalPoints <= 100) {
+  message = `Your Audit and Assessment score is: ${totalPoints} points. Good score`;
+} else if (totalPoints > 100 && totalPoints <= 150) {
+  message = `Your Audit and Assessment score is: ${totalPoints} points. Excellent score`;
+} else {
+  message = `Your Total Points: ${totalPoints}`;
+}
+
+const popup = document.createElement('div');
+popup.className = 'custom-popup';
+popup.innerHTML = `
+  <p>${message}</p>
+  <div class="details-text">For more details : </div>
+  <div class="button-container">
+    <a href="https://finops.ntglaunch.com/" target="_blank"><button>Contact Us</button></a>
+    <button onclick="closePopup()">Close</button>
+  </div>
+`;
+
+document.body.appendChild(popup);
+}
+
+function closePopup() {
+const popup = document.querySelector('.custom-popup');
+if (popup) {
+  popup.remove();
+}
+}
+</script>
+<style>
+.custom-popup {
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+padding: 30px;
+background-color: #f9f9f9;
+text-align: center; /* Center the text */
+}
+
+.custom-popup .details-text {
+text-align: left; /* Align text to the left */
+font-style: italic; /* Italicize the text */
+margin-bottom: 10px; /* Add margin for spacing */
+ color:rgb(108, 105, 105);
+}
+
+.custom-popup .button-container {
+margin-top: 20px; /* Add margin to create a gap */
+}
+
+.custom-popup .button-container button {
+margin: 0 10px; /* Add margin to create a gap */
+}
+</style>
+</body>
+</html>
