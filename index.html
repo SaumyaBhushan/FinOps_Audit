@@ -772,7 +772,7 @@
       function showNextPillar() {
         document.getElementById(`pillar${currentPillar}`).style.display =
           "none";
-        if (currentPillar <= 5) {
+        if (currentPillar <= 4) {
           currentPillar++;
         }
         const nextPillar = document.getElementById(`pillar${currentPillar}`);
@@ -782,7 +782,7 @@
         }
 
         // Toggle the visibility of buttons based on the current pillar
-        if (currentPillar === 6) {
+        if (currentPillar === 5) {
           nextButton.style.display = "none";
           calculateButton.style.display = "inline-block";
         } else {
@@ -826,7 +826,7 @@
           
         }
      if (previousSelectedValues !== questionId ) {
-          if (!isNaN(currentCount) && currentCount < 5) {
+          if (!isNaN(currentCount) && currentCount < 4) {
             questionIndicator.textContent = (currentCount + 1).toString();
             questionIndicator1.textContent = (currentCount + 1).toString();
           }
@@ -839,7 +839,7 @@
 
       function jumpToPillar(pillarNumber) {
         // Hide all pillars
-        for (let i = 1; i <= 6; i++) {
+        for (let i = 1; i <= 5; i++) {
           document.getElementById(`pillar${i}`).style.display = "none";
         }
 
@@ -853,7 +853,7 @@
         }
 
         // Toggle the visibility of buttons based on the current pillar
-        if (currentPillar === 6) {
+        if (currentPillar === 5) {
           nextButton.style.display = "none";
           calculateButton.style.display = "inline-block";
         } else {
@@ -898,8 +898,8 @@ function calculatePoints() {
   let totalPoints = 0;
 
   // Your existing logic to calculate totalPoints
-  for (let pillarIndex = 1; pillarIndex <= 6; pillarIndex++) {
-    for (let questionIndex = 1; questionIndex <= 5; questionIndex++) {
+  for (let pillarIndex = 1; pillarIndex <= 5; pillarIndex++) {
+    for (let questionIndex = 1; questionIndex <= 4; questionIndex++) {
       const questionName = `pillar${pillarIndex}_q${questionIndex}`;
       const selectedOption = document.querySelector(`select[name="${questionName}"]`);
 
